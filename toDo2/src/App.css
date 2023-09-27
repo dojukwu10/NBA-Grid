@@ -1,0 +1,78 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.immaculate-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 3 columns with equal width */
+  gap: 16px; /* Gap between grid items */
+  justify-content: center;
+
+}
+
+.grid-item {
+  padding: 50px;
+  width: 150px; 
+  height: 50px; 
+  overflow: hidden; 
+  white-space: nowrap;
+  text-overflow: ellipsis; 
+  font-size: 12px; 
+}
+
+.grid-item2 {
+  padding: 50px;
+  width: 150px; 
+  height: 50px; 
+  overflow: hidden; 
+  white-space: nowrap;
+  text-overflow: ellipsis; 
+}
+
+.search-bar {
+  margin: auto;
+ 
+  width: 40%;
+
+  padding: 10px;
+  
+
+}
+
+.dropdown {
+  overflow-y: scroll;
+  height: 200px;
+  width: 570px;
+list-style-type: none;
+}
+
+.dropdown-items{
+  width: 500px;
+  border-bottom: 1px solid #646cffaa;
+  border-radius: 0%;
+  border-top: 1px solid #646cffaa;
+  border-left: 1px solid #646cffaa;
+  border-right: 1px solid  #646cffaa;
+}
+
+.newGame{
+  margin-left: 2px;
+  margin-top: 10px;
+}
+
+
+
+
