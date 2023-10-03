@@ -1,3 +1,4 @@
+#TO-DO:
 #FIND A WAY TO ACCOUNT FOR PLAYERS WITH SAME URL NAMES (KEEP COUNT OF TIMES A URL POPS UP IN AN ARRAY. ADD 1 TO 01 IN URL)
 #ACCOUNT FOR COMMAS AND PERIODS IN PLAYERS WITH JR OR NUMBERS IN THEIR NAMES
 
@@ -7,13 +8,13 @@ import time
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
-uri = "mongodb+srv://ojukwuderek:ugatp2003@all-nba-players.ppyocuh.mongodb.net/?retryWrites=true&w=majority"
+#uri = 
 
 client = MongoClient(uri, server_api=ServerApi('1'))
 
 try:
     client.admin.command('ping')
-    print("Pinged your deployment. You successfully connected to MongoDB!")
+    print("Connected")
 except Exception as e:
     print(e)
 
@@ -28,11 +29,11 @@ class Player:
         self.teams = teams
         self.years = years
      
-#keep track of player names
+#keeps track of player names
 player_names = []
-#keep track of teams (can be deleted) 
+#keeps track of teams 
 player_teams = []
-#keep track of the player bojects to be pushed to mongo
+#keep track of the player ojects to be pushed to mongo
 player_objects = []
 #keep track of player url occurences to make sure we get players with same url in bball ref
 player_url = []
@@ -53,15 +54,15 @@ for x in range(1947, 2024):
 
     player_td_elements = [td for td in td_elements if td.get('data-th') == 'Player']
 
-        # Loop through <td> elements and extract the player names
+        #Loop through <td> elements getting  player names
     for td in player_td_elements:
-            # Find the <a> tag within the <td> element
+            
             player_link = td.find('a')
             
             # Check if a link is found and if it has a data-th attribute
             if player_link:
                 
-                # Extract the player's name
+                # Get the player's name
                 
                 scrub_name = player_link.text.replace('-', '')
                 player_name = scrub_name.replace('.', '')
@@ -87,7 +88,7 @@ for x in range(1947, 2024):
                         response2 = requests.get('https://www.basketball-reference.com/players/'+url_var2)
                         soup2 = BeautifulSoup(response2.text, 'html.parser')
                         time.sleep(5)
-                        #print(f'Request was rejected with status code {response2.status_code}')
+                        #print(f'Requst response: {response2.status_code}')
                         td_elements = soup2.find_all('td')
                         th_elements = soup2.find_all('th')
                         team_td_elements = [td for td in td_elements if td.get('data-stat') == 'team_id']
@@ -143,7 +144,7 @@ for x in range(1947, 2024):
                         response2 = requests.get(bball_ref_url)
                         soup2 = BeautifulSoup(response2.text, 'html.parser')
                         time.sleep(5)
-                        #print(f'Request was rejected with status code {response2.status_code}')
+                       
                         td_elements = soup2.find_all('td')
                         th_elements = soup2.find_all('th')
                         team_td_elements = [td for td in td_elements if td.get('data-stat') == 'team_id']
