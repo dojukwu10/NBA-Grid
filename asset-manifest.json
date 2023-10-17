@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/NBA-Grid/static/css/main.bc0bf9c5.css",
+    "main.js": "/NBA-Grid/static/js/main.9dace567.js",
+    "index.html": "/NBA-Grid/index.html",
+    "main.bc0bf9c5.css.map": "/NBA-Grid/static/css/main.bc0bf9c5.css.map",
+    "main.9dace567.js.map": "/NBA-Grid/static/js/main.9dace567.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bc0bf9c5.css",
+    "static/js/main.9dace567.js"
+  ]
+}
